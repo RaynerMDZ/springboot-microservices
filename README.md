@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/RaynerMDZ/springboot-microservices/actions/workflows/maven.yml/badge.svg)](https://github.com/RaynerMDZ/springboot-microservices/actions/workflows/maven.yml)
+
 # Spring Boot Microservices Architecture with Spring Cloud and Docker
 
 This is a sample project to demonstrate how to build a microservices architecture using Spring Boot, Spring Cloud and Docker.
