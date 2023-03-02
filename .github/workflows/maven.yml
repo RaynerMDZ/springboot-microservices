@@ -1,0 +1,45 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 19
+      uses: actions/setup-java@v3
+      with:
+        java-version: '19'
+        distribution: 'temurin'
+        cache: maven
+        
+    - name: Build Api Gateway
+      working-directory: ./api-gateway
+      run: mvn -B package --file pom.xml
+      
+    - name: Build Configuration Server
+      working-directory: ./configuration-server
+      run: mvn -B package --file pom.xml
+      
+    - name: Build Department Service
+      working-directory: ./department-service
+      run: mvn -B package --file pom.xml
+      
+    - name: Build Employee Service
+      working-directory: ./employee-service
+      run: mvn -B package --file pom.xml
+      
+    - name: Build Organization Service
+      working-directory: ./organization-service
+      run: mvn -B package --file pom.xml
+      
+    - name: Build Service Registry
+      working-directory: ./service-registry
+      run: mvn -B package --file pom.xml
